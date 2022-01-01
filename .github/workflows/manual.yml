@@ -21,9 +21,9 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: install pandoc
-      run: sudo apt install -y pandoc
+      run: sudo apt install -y pandoc; ls -l
     - name: run pandoc
-      run: ls; pandoc ./test_notes.markdown -f markdown -t html -s -o ./result.html
+      run: pandoc ./test_notes.markdown -f markdown -t html -s -o ./result.html
     - name: Static files storage
   # You may pin to the exact commit or the version.
   # uses: sylvanld/action-storage@ae3e57af3494b0970af77a20816b976d856ced2d
