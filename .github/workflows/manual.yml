@@ -19,9 +19,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - uses: actions/checkout@v2
     # Runs a single command using the runners shell
     - name: install pandoc
-      run: sudo apt install -y pandoc; ls -l
+      run: sudo apt install -y pandoc
     - name: run pandoc
       run: pandoc ./test_notes.markdown -f markdown -t html -s -o ./result.html
     - name: Static files storage
