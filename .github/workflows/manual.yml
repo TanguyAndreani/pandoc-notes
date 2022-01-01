@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  build-and-deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,7 +23,7 @@ jobs:
     - name: install pandoc
       run: sudo apt install -y pandoc
     - name: run pandoc
-      run: pandoc test_notes.markdown -f markdown -t html -s -o result.html
+      run: pandoc *.markdown -f markdown -t html -s -o result.html
     - name: Static files storage
   # You may pin to the exact commit or the version.
   # uses: sylvanld/action-storage@ae3e57af3494b0970af77a20816b976d856ced2d
